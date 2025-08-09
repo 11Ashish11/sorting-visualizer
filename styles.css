@@ -1,0 +1,253 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: white;
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.controls {
+    background: white;
+    border-radius: 15px;
+    padding: 25px;
+    margin-bottom: 20px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.input-group, .algorithm-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.control-buttons, .speed-control {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+label {
+    font-weight: bold;
+    color: #555;
+}
+
+input[type="text"], select {
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus, select:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+#startSort {
+    background: #4CAF50;
+    color: white;
+}
+
+#startSort:hover {
+    background: #45a049;
+}
+
+#resetArray {
+    background: #f44336;
+    color: white;
+}
+
+#resetArray:hover {
+    background: #da190b;
+}
+
+#pauseResume {
+    background: #ff9800;
+    color: white;
+}
+
+#pauseResume:hover {
+    background: #f57c00;
+}
+
+#generateRandom {
+    background: #2196F3;
+    color: white;
+}
+
+#generateRandom:hover {
+    background: #0b7dda;
+}
+
+button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.speed-control {
+    grid-column: span 2;
+    justify-content: center;
+}
+
+input[type="range"] {
+    width: 200px;
+    margin: 0 10px;
+}
+
+.stats {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    background: white;
+    border-radius: 15px;
+    padding: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+}
+
+.stat {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.visualization-container {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    margin-bottom: 20px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+    min-height: 400px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+#arrayContainer {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 2px;
+    height: 350px;
+    width: 100%;
+}
+
+.array-bar {
+    background: linear-gradient(to top, #667eea, #764ba2);
+    border-radius: 4px 4px 0 0;
+    min-width: 15px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    font-size: 12px;
+    padding: 2px;
+    border: 2px solid transparent;
+}
+
+.array-bar.comparing {
+    background: linear-gradient(to top, #ff6b6b, #ee5a52);
+    border-color: #ff4757;
+    transform: scale(1.05);
+}
+
+.array-bar.swapping {
+    background: linear-gradient(to top, #ffa726, #ff9800);
+    border-color: #ff6f00;
+    transform: scale(1.1);
+}
+
+.array-bar.sorted {
+    background: linear-gradient(to top, #4caf50, #45a049);
+    border-color: #2e7d32;
+}
+
+.array-bar.pivot {
+    background: linear-gradient(to top, #9c27b0, #7b1fa2);
+    border-color: #4a148c;
+}
+
+.algorithm-info {
+    background: white;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.algorithm-info h3 {
+    color: #667eea;
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+}
+
+.algorithm-info p {
+    color: #666;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.complexity {
+    font-size: 14px;
+    color: #555;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .controls {
+        grid-template-columns: 1fr;
+    }
+    
+    .speed-control {
+        grid-column: span 1;
+    }
+    
+    .stats {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    .array-bar {
+        min-width: 10px;
+        font-size: 10px;
+    }
+}

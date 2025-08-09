@@ -1,0 +1,16 @@
+{
+  "name": "sorting-visualizer",
+  "version": "1.0.0",
+  "description": "A visual representation of different sorting algorithms",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "keywords": ["sorting", "algorithms", "visualization", "education"],
+  "author": "",
+  "license": "MIT"
+}
